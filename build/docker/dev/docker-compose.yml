@@ -1,0 +1,15 @@
+version: '3'
+services:
+  sphinx:
+    image: jcrattzama/ceos_docs
+    build:
+      context: ${DKR_CMP_CONTEXT}
+      dockerfile: build/docker/dev/Dockerfile
+      args:
+        - UID=${UID}
+        - ROOT_DIR=${ROOT_DIR}
+    # command: 'tail -f /dev/null'
+    command: 'rerun -v -i=source/*.rst -i=source/*.md "make html"'
+    volumes:
+      - ${DKR_CMP_CONTEXT}/docs:${ROOT_DIR}
+    restart: "no"
