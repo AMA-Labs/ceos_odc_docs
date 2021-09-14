@@ -1,4 +1,4 @@
-CEOS ODC Products
+CEOS ODC Products Overviews
 =================
 
 CEOS ODC UI
@@ -23,9 +23,9 @@ CEOS ODC Indexer
 -----------
 The CEOS ODC Indexer ([GitHub](https://github.com/ceos-seo/odc_manual_indexer)) provides convenient means of processing and indexing data for ODC environments.
 
-CEOS ODC-GEE Integration
+CEOS ODC-GEE Integration Package
 -----------
-The CEOS ODC-GEE package ([GitHub](https://github.com/ceos-seo/odc-gee)) allows Google Earth Engine (GEE) data to be loaded into ODC environments.
+The CEOS ODC-GEE integration package ([GitHub](https://github.com/ceos-seo/odc-gee)) allows Google Earth Engine (GEE) data to be loaded into ODC environments.
 
 This is particularly useful since GEE has many datasets and they can be "indexed" very quickly with ODC-GEE. Indexing a product only requires a product definition to be created (should be reformatted to look more like product definitions in the ODC Indexer) and added with `datacube product add` to allow an environment with ODC-GEE to be able to load data from it.
 

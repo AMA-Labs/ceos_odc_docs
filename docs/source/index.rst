@@ -11,10 +11,10 @@ related technologies.
 
 .. toctree::
    :maxdepth: 2
-   :caption: ODC Products
+   :caption: ODC Products Overviews
    
-   modules/ceos_odc_products.md
-   modules/other_odc_products.md
+   modules/odc_products_overviews/ceos_odc_products_overviews.md
+   modules/odc_products_overviews/other_odc_products_overviews.md
 
 .. toctree::
    :maxdepth: 2
@@ -22,7 +22,18 @@ related technologies.
    
    modules/install_docs/environment_setup.md
    modules/install_docs/database_install.md
-    
+
+.. toctree::
+   :maxdepth: 2
+   :caption: ODC Products Technical Documentation
+
+   modules/odc_products_technical_docs/odc_gee_technical_doc.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Help
+
+   modules/help/obtaining_help.md
 
 Indices and tables
 ==================
