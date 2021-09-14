@@ -29,6 +29,7 @@ author = ''
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'recommonmark' # Allow Markdown links.
 ]
 
 # Add any paths that contain templates here, relative to this directory.
