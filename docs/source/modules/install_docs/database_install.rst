@@ -1,29 +1,32 @@
-# ODC Database Installation Guide
+ODC Database Installation Guide
+===============================
 
 This document is a guide for installing and configuring 
 the Open Data Cube index database - which the ODC will query to determine where to retrieve data from (e.g. local or remote GeoTIFFs).
 
-## Prerequisites
-----
+Prerequisites
+-------------
 
-Follow the [Environment Setup Guide](environment_setup.md) if you have not done so for your environment yet.
+Follow the `Environment Setup Guide <environment_setup.rst>`_ if you have not done so for your environment yet.
 
-## Installation
-----
+Installation
+------------
 
 Ultimately, the database should be a Postgres instance accessible from the ODC installations you want to access it from.
 
 You will need to know:
-* The host name (IP or domain name of the database)
-* The database name (name of the database within Postgres to use for ODC) 
-* The user name (name of the Postgres user that will access the database) 
-* The password (password for the aforementioned user)
 
-These values will need to be set in the `datacube.conf` file for all ODC installations that should index this database. See the [ODC Environment Configuration](https://datacube-core.readthedocs.io/en/stable/ops/config.html) documentation for information on setting up ODC configuration files.
+- The host name (IP or domain name of the database)
+- The database name (name of the database within Postgres to use for ODC) 
+- The user name (name of the Postgres user that will access the database) 
+- The password (password for the aforementioned user)
+
+These values will need to be set in the `datacube.conf` file for all ODC installations that should index this database. See the `ODC Environment Configuration <https://datacube-core.readthedocs.io/en/stable/ops/config.html>`_ documentation for information on setting up ODC configuration files.
 
 We can't include full instructions for how to set up the database on all cloud providers, but the instructions for setting it up locally with Docker using Linux shell commands are included below.
 
-### Creating the database
+Creating the database
+^^^^^^^^^^^^^^^^^^^^^
 
 The following commands should be run from the top-level directory (directory containing `Makefile`).
 
@@ -38,13 +41,13 @@ Run the following command to do this:
 `make create-odc-db-volume`
 
 Now we need to create the Docker container for the database.
-In the `Makefile` file at the top-level directory, find the `create-odc-db` target. Here you will see the command to create the ODC database Docker container. You can replace the values for `POSTGRES_DB`, `POSTGRES_USER` and `POSTGRES_PASSWORD` with the desired Postgres database name, user name, and password. Note that if you change these settings, you will need to change the corresponding settings for applications that use them, like the [CEOS ODC Notebooks](https://github.com/ceos-seo/data_cube_notebooks) or the [CEOS ODC UI](https://github.com/ceos-seo/data_cube_ui).
+In the `Makefile` file at the top-level directory, find the `create-odc-db` target. Here you will see the command to create the ODC database Docker container. You can replace the values for `POSTGRES_DB`, `POSTGRES_USER` and `POSTGRES_PASSWORD` with the desired Postgres database name, user name, and password. Note that if you change these settings, you will need to change the corresponding settings for applications that use them, like the `CEOS ODC Notebooks <https://github.com/ceos-seo/data_cube_notebooks>`_ or the `CEOS ODC UI <https://github.com/ceos-seo/data_cube_ui>`_.
 
 Once you are ready to start the database, run this command:
 `make create-odc-db`
 
-## External Connections
-----
+External Connections
+--------------------
 
 If you want this database to be accessible from anywhere, just specify the mapping of the Postgres port (`5432`) to the port on the host that it should be available from with the argument `-p <host port>:5432` after `run` and before `postgres` in the command for the `create-odc-db` target in the `Makefile` file.
 Use `-p 5432:5432` if possible.

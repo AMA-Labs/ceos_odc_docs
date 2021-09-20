@@ -1,5 +1,17 @@
+# Utils dependencies
+scipy==1.5.2
+lcmap-pyccd==2018.10.17
+scikit-image==0.17.2
+scikit-learn==0.23.2
+fiona==1.8.17
+joblib==0.16.0
+matplotlib==3.3.2
+folium==0.11.0
+# Sphinx dependencies
+when-changed==0.3.0
 rerun==1.0.30
 Sphinx==3.0.1
+sphinx-autobuild==2021.3.14
 sphinx-autodoc-typehints==1.10.3
 sphinx-click==2.3.2
 sphinx-rtd-theme==0.4.3
@@ -9,4 +21,3 @@ sphinxcontrib-htmlhelp==1.0.3
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
-recommonmark==0.7.1 # Allow Markdown links in Sphinx

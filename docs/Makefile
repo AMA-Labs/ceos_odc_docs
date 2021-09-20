@@ -14,7 +14,25 @@ help:
 
 .PHONY: help Makefile
 
+# Generate RST files from the utils code.
+apidocs:
+	rm -rf ./source/modules/developer_guide/generate
+	sphinx-apidoc -o ./source/modules/developer_guide/generate data_cube_utilities/
+
+livehtml:
+	sphinx-autobuild -b html -c source --host 0.0.0.0 --port $${SPHINX_AUTOBUILD_PORT} --ignore "*_tmp_*" --ignore "*_old_*" --ignore "build/*" --ignore "source/modules/developer_guide/generate/*" $(SPHINXOPTS) source $(BUILDDIR)/html
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
+# %:: Makefile
+# 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+html:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+clean:
+	rm -rf build/
+	rm -rf source/modules/developer_guide/generate/
+
+# Required when Python source code changes (docstrings).
+fullrebuild: clean apidocs html

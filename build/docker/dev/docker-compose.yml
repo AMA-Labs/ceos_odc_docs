@@ -9,7 +9,13 @@ services:
         - UID=${UID}
         - ROOT_DIR=${ROOT_DIR}
     # command: 'tail -f /dev/null'
-    command: 'rerun -v -i=source/*.rst -i=source/*.md "make html"'
+    # command: 'conda run -n odc /bin/bash -c "rerun -v -i=build -i=data_cube_utilities -i=.* \"make html\""'
+    command: 'conda run -n odc /bin/bash -c "make livehtml"'
+    environment:
+      SPHINX_AUTOBUILD_PORT: ${SPHINX_AUTOBUILD_PORT}
     volumes:
       - ${DKR_CMP_CONTEXT}/docs:${ROOT_DIR}
+      - ${DKR_CMP_CONTEXT}/data_cube_utilities:${ROOT_DIR}/data_cube_utilities
+    ports:
+      - ${SPHINX_AUTOBUILD_PORT}:${SPHINX_AUTOBUILD_PORT}
     restart: "no"

@@ -31,23 +31,12 @@ related technologies.
 
 .. toctree::
    :maxdepth: 2
+   :caption: Developer Guide
+
+   modules/developer_guide/api_reference.md
+
+.. toctree::
+   :maxdepth: 2
    :caption: Help
 
    modules/help/obtaining_help.md
-
-Indices and tables
-==================
-
-.. 
-    * :ref:`genindex`
-    * :ref:`search`
-    * :ref:`modindex`
-
-..
-    Other Notable ODC Products
-      - ODC Platform (from AMA - also mention odc_db_init repo)
-    Data Management
-      - Indexing 
-        (link to main docs on this and mention 
-         but mainly discuss the CEOS ODC Indexer and its pipeline
-         (link to the CEOS ODC Indexer page above))

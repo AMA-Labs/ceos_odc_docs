@@ -1,17 +1,20 @@
-# Environment Setup Guide
+Environment Setup Guide
+=======================
 
 This document is a guide for setting up an environment to run the ODC - notably by installing Make, Docker, and Docker Compose.
 
-## Installation
-----
+Installation
+---------------
 
-### Operating System
+Operating System
+^^^^^^^^^^^^^^^^
 
 First, you will need to ensure you are in an Ubuntu 18.04 or 20.04 environment (20.04 recommended).
 
 We encourage Windows 10 users to use [Windows Subsystem for Linux Version 2 (WSL2)](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
-### Make, Docker, Docker Compose
+Make, Docker, Docker Compose
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now install Make in your Ubuntu environment:
 `apt-get update && apt-get install make -y`
@@ -42,8 +45,8 @@ getent group docker || sudo groupadd docker && \
 usermod -aG docker ${USER}
 ```
 
-## Testing
-----
+Testing
+-------
 
 Once Docker is installed, test it with 
 the following command: `docker run hello-world`
