@@ -9,8 +9,8 @@ services:
         - UID=${UID}
         - ROOT_DIR=${ROOT_DIR}
     # command: 'tail -f /dev/null'
-    # command: 'conda run -n odc /bin/bash -c "rerun -v -i=build -i=data_cube_utilities -i=.* \"make html\""'
-    command: 'conda run -n odc /bin/bash -c "make livehtml"'
+    # command: 'mamba run -n odc /bin/bash -c "rerun -v -i=build -i=data_cube_utilities -i=.* \"make html\""'
+    command: 'mamba run -n odc /bin/bash -c "make livehtml"'
     environment:
       SPHINX_AUTOBUILD_PORT: ${SPHINX_AUTOBUILD_PORT}
     volumes:

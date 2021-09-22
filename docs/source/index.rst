@@ -13,30 +13,31 @@ related technologies.
    :maxdepth: 2
    :caption: ODC Products Overviews
    
-   modules/odc_products_overviews/ceos_odc_products_overviews.md
-   modules/odc_products_overviews/other_odc_products_overviews.md
+   modules/odc_products_overviews/ceos_odc_products_overviews.rst
+   modules/odc_products_overviews/other_odc_products_overviews.rst
 
 .. toctree::
    :maxdepth: 2
    :caption: Installation Documents
    
-   modules/install_docs/environment_setup.md
-   modules/install_docs/database_install.md
+   modules/install_docs/environment_setup.rst
+   modules/install_docs/database_install.rst
 
 .. toctree::
    :maxdepth: 2
    :caption: ODC Products Technical Documentation
 
-   modules/odc_products_technical_docs/odc_gee_technical_doc.md
+   modules/odc_products_technical_docs/odc_gee_technical_doc.rst
 
 .. toctree::
    :maxdepth: 2
    :caption: Developer Guide
 
-   modules/developer_guide/api_reference.md
+   modules/developer_guide/api_reference/api_reference.rst
+   modules/developer_guide/dependency_maps/dependency_maps.md
 
 .. toctree::
    :maxdepth: 2
    :caption: Help
 
-   modules/help/obtaining_help.md
+   modules/help/obtaining_help.rst

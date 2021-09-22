@@ -4,6 +4,10 @@ FROM jcrattzama/datacube-base:odc1.8.3
 ARG ROOT_DIR
 WORKDIR ${ROOT_DIR}
 
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    graphviz
+
 COPY build/requirements.txt build/requirements.txt
 RUN pip3 install -r build/requirements.txt
 
